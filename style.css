@@ -1,0 +1,30 @@
+#grid {
+    height: 840px;
+    width: 840px;
+    color: azure;
+    border: 5px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    justify-content: flex-start;
+    overflow: hidden; 
+    margin-top: 10px;
+}
+
+.box {
+    height: 5%; 
+    width: 5%; 
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box; 
+    flex: 0 0 5%; 
+}
+#choice{
+    height:100px;
+    width:840px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    border-radius: 10px 10px;
+}
