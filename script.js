@@ -81,7 +81,7 @@ async function traverse(cur) {
                 boxNext.walls[1] = false;
             }
             boxNext.style.backgroundColor = "red";
-            await new Promise(r=>setTimeout(r,50));
+            //await new Promise(r=>setTimeout(r,10));
             draw();
             await traverse(ne);
             
@@ -95,6 +95,7 @@ function draw() {
     for (let i = 0; i < 20; i++) {
         for (let j = 0; j < 20; j++) {
             let box = document.getElementById(create_id(i, j));
+            //console.log(box.walls)
             if (visited[i][j]) {
                 if (!box.walls[0]) {
                     box.style.borderTop = "1px solid cyan";
@@ -121,6 +122,16 @@ async function start(){
     let e = document.getElementById(create_id(19,19));
     s.style.backgroundColor = "red";
     e.style.backgroundColor = "green";
-
+    check();
+    
+}
+async function check(){
+    for (i=0;i<visited.length;i++){
+        for (let j=0;j<visited.length;j++){
+            if (visited[i][j]==0){
+                await traverse([i,j]);
+            }
+        }
+    }
 }
 start();
